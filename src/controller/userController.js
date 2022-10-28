@@ -33,7 +33,7 @@ const postUser = async (req, res) => {
       return res.status(400).send({ status: false, message: "email is not valid" });
     let UniqueEmail = await userModel.findOne({ email: email });
     if (UniqueEmail)
-      return res.status(400).send({ status: false, message: "Email already Exists" });
+      return res.status(409).send({ status: false, message: "Email already Exists" });
 
     //===========================  password ================================================================
 
