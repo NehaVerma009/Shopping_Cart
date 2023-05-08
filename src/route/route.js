@@ -14,7 +14,7 @@ router.get('/user/:userId/profile', auth.Authentication, userController.getUserP
 router.put('/user/:userId/profile', auth.Authentication, auth.Authorization, userController.updateUser)
 
 //************************Product*************//
-router.post('/products', productController.product)
+
 router.get('/products', productController.getProductByFilters)
 router.get('/products/:productId', productController.getProductsById)
 router.put('/products/:productId', productController.updateProductsById)

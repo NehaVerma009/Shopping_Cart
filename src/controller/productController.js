@@ -14,7 +14,7 @@ const product = async function (req, res) {
 
     let { title, description, price, currencyId, currencyFormat, isFreeShipping, style, installments, availableSizes } = data;
 
-    //---------title-------------
+    //---------title------------- 
     if (!title) return res.status(400).send({ status: false, message: "Title is mandatory field" })
     let uniqueTitle = await productModel.findOne({ title: title })
     if (uniqueTitle) return res.status(400).send({ status: false, message: "Title should be unique" })
